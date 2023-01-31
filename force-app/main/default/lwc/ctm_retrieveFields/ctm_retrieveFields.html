@@ -1,0 +1,21 @@
+<template>
+    <lightning-dual-listbox name="fields"
+                            label="Select Fields"
+                            source-label="Available"
+                            selected-label="Selected"
+                            field-level-help="Select fields that you wish to export"
+                            options={option}
+                            value = ""
+                            onchange={handleChange}
+                            required-options={requiredOptions}
+                            ></lightning-dual-listbox>
+                            <div> Selected: {selected}</div>
+        <!--<lightning-combobox
+            name="progress"
+            label="Status"
+            value={value}
+            placeholder="Select Progress"
+            options={option}
+            onchange={handleChange} >
+        </lightning-combobox>-->
+</template>

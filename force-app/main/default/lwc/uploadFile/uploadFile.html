@@ -1,0 +1,48 @@
+<template>
+    <lightning-card title="Files Component" icon-name="custom:custom63">
+
+        <br/>
+
+        <div class="slds-grid slds-gutters">
+            <div class="slds-p-left_medium slds-col slds-size_1-of-4">
+              <span>
+                <lightning-file-upload
+                label="Upload files"
+                name="fileUploader"
+                accept={acceptedFormats}
+                record-id={recordId}
+                onuploadfinished={handleUploadFinished}
+                multiple
+            >
+            </lightning-file-upload>
+
+              </span>
+            </div>
+            <div class="slds-col slds-size_1-of-4">
+              <span>
+
+                <c-multi-select-combobox label="Select child objects" name="options" options={options} onchange={handleChangeC} ></c-multi-select-combobox>
+ 
+              </span>
+            </div>
+          </div>
+    
+  
+
+<br/>
+<hr/>
+  <lightning-dual-listbox
+        id="selectOptions"
+        name="Select Options"
+        label="Select the clid objects to which you intend the files to be attached"
+        source-label="Available Child Objects"
+        selected-label="Selected Child Objects"
+        options={listOptions}
+        value=''
+        required-options=''
+        onchange={handleChange}
+    >
+    </lightning-dual-listbox>
+    </lightning-card>
+
+</template>

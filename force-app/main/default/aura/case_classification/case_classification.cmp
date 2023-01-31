@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId"> <!--inherit recordId attribute-->
+<aura:attribute name="record" type="Object" />
+<aura:attribute name="simpleRecord" type="Object" />
+<aura:attribute name="recordError" type="String" />
+    
+<force:recordData aura:id="recordEditor"
+    fields="Id, Method__c, State_Crossed__c,Email_Body__c , Demo_Description__c, OwnerId, Owner.Name"
+    recordId="{!v.recordId}"
+    targetError="{!v.recordError}"
+    targetRecord="{!v.record}"
+    targetFields ="{!v.simpleRecord}"
+    mode="EDIT"
+    recordUpdated="{!c.handleCaseUpdated}"
+                  />
+    
+</aura:component>

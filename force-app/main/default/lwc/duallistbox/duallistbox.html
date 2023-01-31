@@ -1,0 +1,26 @@
+<template>
+
+    <lightning-card  variant="Narrow"  >
+
+    <lightning-combobox
+            name="progress"
+            label="Status"
+            value={value}
+            placeholder="Select Progress"
+            options={options}
+            onchange={handleChangeCombo} ></lightning-combobox>
+   
+    <lightning-dual-listbox
+        id="selectOptions"
+        name="Select Options"
+        label="Select Options"
+        source-label="Available Options"
+        selected-label="Selected Options"
+        options={listOptions}
+        value={defaultOptions}
+        required-options={requiredOptions}
+        onchange={handleChange}
+    >
+    <div> Selected: {selected}</div>
+    </lightning-dual-listbox></lightning-card>
+</template>

@@ -1,0 +1,23 @@
+<apex:page standardController="Account">
+  <apex:form >
+    <apex:pageBlock title="My Content" mode="edit">
+      <apex:pageBlockButtons >
+        <apex:commandButton action="{!save}" value="Save"/>
+      </apex:pageBlockButtons>
+      <apex:pageBlockSection title="My Content Section" columns="2">
+   <apex:inputField label="&lt;script&gt;&lt;script&gt;" value="{!account.name}"/>
+        <apex:inputField value="{!Account.site}"/>
+        <apex:inputField value="{!account.type}"/>
+        <apex:inputField value="{!account.accountNumber}"/>
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+  </apex:form>
+
+<br/>
+<hr></hr>
+  <apex:outputPanel id="outputIt"> 
+    Value of myTextField is <apex:outputText value="{!Account.Name}" escape="false"/>
+  </apex:outputPanel>    
+ 
+
+</apex:page>

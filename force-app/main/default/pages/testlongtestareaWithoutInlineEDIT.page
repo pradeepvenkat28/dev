@@ -1,0 +1,9 @@
+<apex:page standardController="Case">
+  <apex:form > 
+        <apex:pageBlock title="Hello {!$User.FirstName}!">
+            Change Biaography Name: <p/> 
+            <apex:inputField value="{!case.Biography__c}"/> <p/>
+            <apex:commandButton action="{!save}" value="Save New Case Name"/> 
+        </apex:pageBlock>
+    </apex:form> 
+</apex:page>

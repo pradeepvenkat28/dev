@@ -1,0 +1,26 @@
+<apex:page standardController="Contact">
+  <!-- Page Header -->
+  <apex:sectionHeader title="Contact Edit" subtitle="New Contact" />
+ 
+  <apex:form >
+    <apex:pageBlock title="Contact" mode="edit">
+      <!-- SFDC99 Rules -->
+      <apex:outputPanel styleClass="rules">
+    
+      </apex:outputPanel>
+      <!-- Fields -->
+      <apex:pageBlockSection columns="3" showHeader="true" title="Membership Status">
+        <apex:inputField value="{!contact.Account}" required="true" />
+        <apex:inputField value="{!contact.FirstName}" required="true" />
+        <apex:inputField value="{!contact.LastName}"  required="true" />
+        <apex:inputField value="{!contact.Email}"     required="true" />
+        
+      </apex:pageBlockSection>
+      <!-- Button Section -->
+      <apex:pageBlockButtons location="bottom">
+        <apex:commandButton value="Save" action="{!save}" />
+     
+      </apex:pageBlockButtons>
+    </apex:pageBlock>
+  </apex:form>
+  </apex:page>

@@ -1,0 +1,17 @@
+<apex:page >
+<script src="/support/api/53.0/interaction.js" type="text/javascript"></script>
+<script src="/support/api/53.0/lightning/opencti_min.js" type="text/javascript"></script>
+<script>
+var callback = function(response) {
+if (response.success) {
+console.log('API method call executed successfully! returnValue:', response.returnValue);
+} else {
+console.error('Something went wrong! Errors:', response.errors);
+}
+};
+function searchAndScreenPop() {
+//Invokes API methodwindow.sforce.opencti.searchAndScreenPop({searchParams:"45010129700",callType:sforce.opencti.CALL_TYPE.INBOUND,defaultFieldValues:{Ext_Member_ID_HF__c:"45010129700",},callback:callback});
+}
+</script>
+<button onclick="searchAndScreenPop();">searchAndScreenPop</button>
+</apex:page>

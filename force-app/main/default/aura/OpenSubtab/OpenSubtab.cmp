@@ -1,0 +1,17 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,lightning:availableForFlowScreens,lightning:availableForFlowActions" access="global" >
+    <lightning:workspaceAPI aura:id="workspace" />
+      <lightning:navigation aura:id="navService"/>
+    
+     <aura:attribute name="recId" type="String" />
+    <!--<aura:handler name="init" value="{!this}" action="{!c.init}" />-->
+    
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="sObject" type="String"/>
+    <aura:attribute name="mode" type="String" default="view"/>
+    <lightning:button label="Open Tab with Subtab" onclick="{! c.openTabWithSubtab }" />
+    <lightning:button label="Open Tab" onclick="{!c.openTab}"/>
+    <lightning:button label="Get Enclosing Tab Id" onclick="{! c.getEnclosingTabId }" />
+ 
+    
+    
+</aura:component>

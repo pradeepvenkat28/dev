@@ -1,0 +1,31 @@
+<apex:page controller="LontextController" action="{!partsOrderingOnLoad}"   showHeader="false">
+  <!--  <apex:form > 
+        <apex:pageBlock title="Hello {!$User.FirstName}!">
+            Change Biaography Name: <p/> 
+            <apex:inputField value="{!case.Biography__c}"/> <p/>
+            <apex:commandButton action="{!save}" value="Save New Case Name"/> 
+        </apex:pageBlock>
+    </apex:form> -->
+    
+    <apex:outputPanel >
+<apex:form >
+                  <apex:pageBlock >  
+                         <apex:pageBlockSection > 
+                    <apex:pageBlockSectionItem >
+                    
+                    <apex:outputLabel value="Shipping Instructions" />
+                        <apex:outputField id="theshippinginstructions" value="{!OpenPartOrder.Biography__c}"> 
+                            <apex:inlineEditSupport event="ondblclick" showOnEdit="saveButton1,cancelButton1" hideOnEdit=""/>
+                            <apex:commandButton id="saveButton1" value="Save" action="{!populateShippingInstructions}"/> 
+                            <apex:commandButton id="cancelButton1" value="Cancel" /> 
+                        </apex:outputField>
+                        
+                    </apex:pageBlockSectionItem> 
+                    
+                    </apex:pageBlockSection>
+                    
+                    </apex:pageBlock>
+                    </apex:form>
+                    
+</apex:outputPanel>
+</apex:page>

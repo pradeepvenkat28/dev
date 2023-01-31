@@ -1,0 +1,16 @@
+<template>
+    <lightning-card  variant="Narrow"  title="CSV Template Maker" icon-name="standard:products">
+        <div class="slds-grid slds-gutters slds-var-p-around_large">
+            <div class="slds-col">
+                <span><c-ctm_search-obj onchange={handleTypeChange} oncallpasstoparent={passToParent}></c-ctm_search-obj></span>
+            </div>
+            <div class="slds-col">
+                <span><c-ctm_retrieve-fields obj-result={objResult} oncallpasstoparent2={passToParent2}></c-ctm_retrieve-fields></span>
+            </div>
+        </div>
+        <div class="slds-var-p-around_large">
+            <c-ctm_preview-Table field-result={fieldResult}></c-ctm_preview-Table>
+        </div>
+        
+    </lightning-card>
+    </template>

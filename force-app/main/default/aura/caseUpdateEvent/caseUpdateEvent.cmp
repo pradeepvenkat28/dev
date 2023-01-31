@@ -1,0 +1,12 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="case" type="Case"/>
+    
+	<force:recordData aura:id="recordHandler"
+        recordId="{!v.recordId}"
+        fields="Id,ContactId,accountId,Version__c, State_Crossed__c,Email_Body__c , Demo_Description__c, OwnerId, Owner.Name"
+        targetFields="{!v.case}"
+        mode="EDIT"
+        recordUpdated="{!c.handleCaseUpdated}"
+    />
+    <!-- Id, Sales_Organization__c, CS_Classification_Reason__c, CS_Dispute__c, CS_Invoice_Numbers__c, -->
+</aura:component>

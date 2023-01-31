@@ -1,0 +1,34 @@
+<template>
+    <div>
+    <lightning-input type="search"
+        value={searchValue}
+        label="Object"
+        onchange={handleSearchKeyword}
+        ></lightning-input>
+</div> 
+<div class="slds-form-element">
+<div class="slds-form-element__control">
+<div class="slds-combobox_container">
+  <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click">
+    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+      <button type="button" class="slds-input_faux slds-combobox__input" aria-expanded="true" aria-haspopup="listbox">
+        <span class="slds-truncate">{value}</span>
+      </button>
+    </div>
+    <div class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid" role="listbox">
+      <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+        <li onmousedown={handlemousedown} data-name={data.value} data-value={data.label} role="presentation" class="slds-listbox__item" key={data.value} for:each={objResult} for:item="data">
+          <div class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option">
+            <span class="slds-media__figure slds-listbox__option-icon"></span>
+            <span class="slds-media__body">
+              <span class="slds-truncate">{data.label}</span>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</template>

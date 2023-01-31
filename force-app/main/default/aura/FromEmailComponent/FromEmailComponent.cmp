@@ -1,0 +1,30 @@
+<!--
+ - Created by g.dorandini on 19/12/2019.
+ -->
+
+<aura:component description="From Email Component" implements="flexipage:availableForRecordHome,force:hasRecordId" controller="FromEmailComponentController">
+
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+    <aura:attribute name="fromEmailList" type="Object"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:quickActionAPI aura:id="quickActionAPI" />
+
+    <force:recordData aura:id="record"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.record}"
+                      targetFields ="{!v.simpleRecord}"
+                      mode="VIEW"/>
+
+    <lightning:select aura:id="select" name="select" label="Select From Email Address" onchange="{!c.selectFromEmail}">
+        <aura:iteration items="{!v.fromEmailList.emailOptions}" var="email" >
+            <option value="{!email.Email__c}" selected="{!email.Email__c == v.fromEmailList.defaultSelection}">{!email.Display_Name__c} ({!email.Email__c})</option>
+        </aura:iteration>
+    </lightning:select>
+
+</aura:component>

@@ -1,0 +1,57 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:appHostable" access="global" >
+	    <aura:attribute name="modulePickList" type="String[]" />
+ <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+     <div class="slds-card slds-p-around_medium">
+        <lightning:layout multipleRows="true" class="slds-p-bottom_medium">
+            
+            <lightning:layoutItem size="12" largeDeviceSize="6" mediumDeviceSize="6" 
+                                      smallDeviceSize="12" class="slds-p-right_small">
+                                      <lightning:layout multipleRows="true">
+                <lightning:layoutItem size="12" largeDeviceSize="6" mediumDeviceSize="4" 
+                                      smallDeviceSize="12" class="slds-p-right_small">
+                    <lightning:select name="location" label="Sales Office" 
+                                      value="{!v.selectedLocation}" 
+                                      onchange="{!c.handleLocationSelect}">
+                        <option value="">--All--</option>
+                        <aura:iteration items="{!v.locationlist}" var="option">
+                            <option text="{!option}" value="{!option}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                </lightning:layoutItem>
+           
+            <lightning:layoutItem size="12" largeDeviceSize="6" mediumDeviceSize="4" 
+                                  smallDeviceSize="12" class="slds-p-right_small">
+                <lightning:input
+                                 aura:id="enter-search"
+                                 name="enter-search"
+                                 label="{!'Search ' + v.selectedtab + ' Request'}"
+                                 type="search"   
+                                 onkeyup="{!c.handleSearch}"
+                                 onchange="{!c.handleSearch}"
+                                 value="{!v.searchString}"
+                                 />
+            </lightning:layoutItem>
+          </lightning:layout>
+        </lightning:layoutItem>
+            
+     <lightning:layoutItem size="12" largeDeviceSize="6" 
+                                      mediumDeviceSize="6" smallDeviceSize="12" class="mt-20">
+                    <div class="header-button slds-float_right" >
+                        <!-- <lightning:icon iconName="utility:rotate" alternativeText="Refresh" onclick="{!c.handleRefresh}"/> -->
+                        <lightning:button class="slds-m-right_small slds-btn" variant="brand-outline" iconName="utility:rotate" onclick="{! c.handleRefresh }">
+                        </lightning:button>
+                            <lightning:buttonMenu aura:id="menu" variant="border"  iconName="utility:add" 
+                                                  alternativeText="Show menu" onselect="{! c.handleSelect }"
+                                                  menuAlignment="right" class="applyborder">
+                               
+                                <aura:iteration items="{!v.modulePickList}" var="pickListOptions" indexVar="key">
+                                    <lightning:menuItem label="{!pickListOptions.value}" value="{!pickListOptions.key}"/>
+                                </aura:iteration>
+                              
+                            </lightning:buttonMenu>
+                      
+                    </div>
+                </lightning:layoutItem>
+         </lightning:layout>
+    </div>
+</aura:component>

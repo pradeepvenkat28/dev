@@ -1,0 +1,25 @@
+<apex:page standardController="Vendor__c">
+
+<apex:form >
+
+  <apex:pageBlock title="Vendor">
+
+    <apex:pageBlockSection title="Vendor Details" columns="1">
+      <apex:inputField value="{! Vendor__c.Total_Amount__c }"/>
+      <apex:inputField value="{! Vendor__c.Name }"/>
+       <apex:inputField value="{! Vendor__c.Account__c }"/>
+     
+     
+      
+    </apex:pageBlockSection>
+        
+    <apex:pageBlockButtons location="bottom">
+      <apex:commandButton action="{!cancel }" value="Cancel"/>
+      <apex:commandButton action="{!save }" value="Save"/>
+    </apex:pageBlockButtons>
+    
+  </apex:pageBlock>
+
+</apex:form>
+
+</apex:page>

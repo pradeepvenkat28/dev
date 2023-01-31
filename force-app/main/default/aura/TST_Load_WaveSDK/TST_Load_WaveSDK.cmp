@@ -1,0 +1,44 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+                access="global"
+                description="Test Component for wave:sdk" >
+    
+    <aura:attribute name="isReady"	type="Boolean" default="false"/> 
+    <aura:attribute name="dbList"	type="Object"/> 
+    <aura:attribute name="selectedDb"	type="String"/> 
+    <aura:attribute name="listDetails"	type="String"/> 
+    <aura:attribute name="selectedDetails"	type="String"/> 
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	<aura:handler event="aura:doneRendering" action="{!c.fetchDashboards}"/>  
+    
+	<wave:sdk	aura:id="analyticsSDK"/>
+        
+    <lightning:card title="Dashboards" iconName="standard:insights" >
+        <div class="slds-card__body slds-card__body_inner">
+		<lightning:layout >
+            <lightning:layoutItem size="4">
+            	<div class="slds-border_right slds-p-right_small">
+    				<p class="slds-text-heading_small slds-m-bottom_small">#Dashboards: {!v.dbList.length}</p>
+        			<ul class="slds-list_dotted">
+    					<aura:iteration items="{!v.dbList}" var="eachDB">
+        					<li><a onclick="{!c.searchDashboard}" id="{!eachDB.id}">{!eachDB.name + !eachBD.id}</a>
+                			</li>
+            			</aura:iteration>
+    				</ul>
+                </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="8">
+            	<div class="slds-text-align_left slds-border_left slds-p-left_small" style="word-break: break-all;">
+                    <p class="slds-text-heading_small slds-m-bottom_small">Selection</p>
+                    <p class="slds-text-title slds-m-bottom_xx-small">Selected Dashboard</p>
+                	<p class="slds-text-body_small slds-m-bottom_small">{!v.selectedDb}</p>
+            		<p class="slds-text-title slds-m-bottom_xx-small">Details from List</p>
+                	<p class="slds-text-body_small slds-m-bottom_small">{!v.listDetails}</p>
+            		<p class="slds-text-title slds-m-bottom_xx-small">Details from Selection</p>
+                	<p class="slds-text-body_small slds-m-bottom_small">{!v.selectedDetails}</p>
+            	</div>
+            </lightning:layoutItem>
+        </lightning:layout>
+		</div>
+    </lightning:card>
+	
+</aura:component>

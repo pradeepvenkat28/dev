@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+    
+       <!--<ltng:require scripts="{!$Resource.msteams}" afterScriptsLoaded="{!c.afterScriptsLoaded}" /> -->
+     <ltng:require scripts="{!$Resource.mteams1}" afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+    <aura:attribute name="value" type="Integer"/>
+
+    
+<h1>Lightning Static resource</h1>
+	
+</aura:component>

@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable" >
+    
+    
+      <lightning:messageChannel type="SampleMessageChannel__c" scope="APPLICATION"  aura:id="SanityChannel"/>
+
+      <lightning:messageChannel type="SampleMessageChannel__c" onMessage="{!c.handleLightningMessage}" scope="APPLICATION" aura:id="VideoToInviteChannel"/>
+
+	<lightning:button label="Brand" title="Sent LMS Message" onclick="{! c.publishMessage }"/> 
+    	
+</aura:component>
