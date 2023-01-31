@@ -17,6 +17,8 @@ public with sharing class ChatHandler {
             request.setHeader('Content-Type', 'application/json;charset=UTF-8');
             request.setBody(reqBody);
             HttpResponse response = http.send(request);
+            
+            System.debug(response.getBody());
 
             return response.getBody();
 
